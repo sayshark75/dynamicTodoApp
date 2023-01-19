@@ -8,7 +8,7 @@ import { Todo_Loading, Todo_Error, Todo_GetData, Todo_AddData, Todo_RemoveData, 
 export const getTodosApi = (): ThunkAction<void, rootState, unknown, AnyAction> => async (dispatch) => {
   dispatch({ type: Todo_Loading });
   try {
-    let res = await fetch("http://localhost:8080/todos");
+    let res = await fetch("https://dynamictodoappdb.onrender.com/todos");
     let data = await res.json();
     dispatch({ type: Todo_GetData, payload: data });
   } catch (err) {
@@ -21,7 +21,7 @@ export const addTodoApi =
   async (dispatch) => {
     dispatch({ type: Todo_Loading });
     try {
-      let res = await fetch("http://localhost:8080/todos", {
+      let res = await fetch("https://dynamictodoappdb.onrender.com/todos", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
@@ -40,7 +40,7 @@ export const updateTodoApi =
   async (dispatch) => {
     dispatch({ type: Todo_Loading });
     try {
-      let res = await fetch(`http://localhost:8080/todos/${id}`, {
+      let res = await fetch(`https://dynamictodoappdb.onrender.com/todos/${id}`, {
         method: "PATCH",
         body: JSON.stringify(val),
         headers: {
@@ -59,7 +59,7 @@ export const removeTodoApi =
   async (dispatch) => {
     dispatch({ type: Todo_Loading });
     try {
-      let res = await axios.delete(`http://localhost:8080/todos/${id}`);
+      let res = await axios.delete(`https://dynamictodoappdb.onrender.com/todos/${id}`);
       dispatch({ type: Todo_RemoveData, payload: id });
     } catch (err) {
       dispatch({ type: Todo_Error });
