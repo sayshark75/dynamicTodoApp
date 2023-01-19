@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "TestTodo",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "My Todo App",
+      "status": false
+    },
+    {
+      "id": 1674116642256,
+      "title": "My Choices",
+      "status": false
+    }
+  ]
+}
