@@ -16,22 +16,22 @@ const TodoApp = () => {
       <Heading my={"7"} textAlign={"center"}>
         TodoApp
       </Heading>
-      {loading ? (
-        <Flex w={"100%"} h={"100vh"} justifyContent={"center"} alignItems={"center"}>
-          <Spinner transition={"1000ms"} thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
-        </Flex>
-      ) : error ? (
-        <Flex w={"100%"} h={"100vh"} justifyContent={"center"} alignItems={"center"}>
-          <Text as={"b"}>Run Json-Server on Port 8080 with todo[]</Text>
-        </Flex>
-      ) : (
-        <>
-          <Flex w={"100%"} direction={"column"} justifyContent={"center"} alignItems={"center"}>
-            <TodoInput />
+      <>
+        <Flex w={"100%"} direction={"column"} justifyContent={"center"} alignItems={"center"}>
+          <TodoInput />
+          {loading ? (
+            <Flex w={"100%"} h={"100vh"} justifyContent={"center"} alignItems={"center"}>
+              <Spinner transition={"1000ms"} thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+            </Flex>
+          ) : error ? (
+            <Flex w={"100%"} h={"100vh"} justifyContent={"center"} alignItems={"center"}>
+              <Text as={"b"}>Run Json-Server on Port 8080 with todo[]</Text>
+            </Flex>
+          ) : (
             <TodoList />
-          </Flex>
-        </>
-      )}
+          )}
+        </Flex>
+      </>
     </>
   );
 };
